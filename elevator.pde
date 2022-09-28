@@ -8,7 +8,11 @@ int one = 250;
 int open = 250;
 int close = 250;
 int alarm = 250;
+int call = 250;
+int callcancel = 250;
+int emergency = 250;
 int currentFloor = 1;
+int flag = 0;
 String upDown = "";
 void setup(){
   size(500, 500);
@@ -22,7 +26,9 @@ void draw(){
   fill(250);
   textSize(50);
   text(upDown, 60, 105);
-  text(currentFloor,95, 105);
+  if(flag == 0){
+    text(currentFloor,95, 105);
+  }
   fill(six);
   rect(50, 175, 30, 30);
   fill(five);
@@ -41,8 +47,11 @@ void draw(){
   rect(250, 225, 30, 30);
   fill(alarm);
   rect(250, 275, 30, 30);
+  fill(call);
   rect(250, 325, 30, 30);
+  fill(callcancel);
   rect(250, 375, 30, 30);
+  fill(emergency);
   rect(250, 425, 30, 30);
   {
     fill(25);
@@ -166,4 +175,48 @@ void mousePressed(){
       currentFloor = 1;
       one = 50;
    }
+   if(open == 50 && mouseX>250 && mouseY>175 && mouseX<280 && mouseY<205) {
+      flag = 0;
+      open = 250;
+   }else if(open == 250 && mouseX>250 && mouseY>175 && mouseX<280 && mouseY<205) {
+      flag = 1;
+      open = 50;
+   }
+   if(close == 50 && mouseX>250 && mouseY>225 && mouseX<280 && mouseY<255) {
+      flag = 0;
+      close = 250;
+   }else if(close == 250 && mouseX>250 && mouseY>225 && mouseX<280 && mouseY<255) {
+      flag = 1;
+      close = 50;
+   }
+   if(alarm == 50 && mouseX>250 && mouseY>275 && mouseX<280 && mouseY<305) {
+      flag = 0;
+      alarm = 250;
+   }else if(alarm == 250 && mouseX>250 && mouseY>275 && mouseX<280 && mouseY<305) {
+      flag = 1;
+      alarm = 50;
+   }
+   if(call == 50 && mouseX>250 && mouseY>325 && mouseX<280 && mouseY<355) {
+      flag = 0;
+      call = 250;
+   }else if(call == 250 && mouseX>250 && mouseY>325 && mouseX<280 && mouseY<355) {
+      flag = 1;
+      call = 50;
+   }
+   if(callcancel == 50 && mouseX>250 && mouseY>375 && mouseX<280 && mouseY<405) {
+      flag = 0;
+      callcancel = 250;
+   }else if(callcancel == 250 && mouseX>250 && mouseY>375 && mouseX<280 && mouseY<405) {
+      flag = 1;
+      callcancel = 50;
+   }
+   if(emergency == 50 && mouseX>250 && mouseY>425 && mouseX<280 && mouseY<455) {
+      flag = 0;
+      emergency = 250;
+   }else if(emergency == 250 && mouseX>250 && mouseY>425 && mouseX<280 && mouseY<455) {
+      flag = 1;
+      emergency = 50;
+   }
+   
+   
 }
