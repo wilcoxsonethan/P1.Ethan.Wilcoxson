@@ -83,15 +83,13 @@ void draw(){
   PImage alarm = loadImage("alarm.png");
   PImage call = loadImage("call.png");
   PImage callcancel = loadImage("callcancel.png");
-  PImage emergency = loadImage("emergency.png");
   alarm.resize(27, 27);
   call.resize(27, 27);
   callcancel.resize(27,27);
-  emergency.resize(27,27);
   image(alarm, 287, 277);
   image(call, 287, 327);
   image(callcancel, 287, 377);
-  image(emergency, 287, 427);
+  image(alarm, 287, 427);
 }
 
 void mousePressed(){
